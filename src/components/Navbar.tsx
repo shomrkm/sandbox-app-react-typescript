@@ -32,7 +32,6 @@ const StyledNavMenu = styled.div<{ active: boolean }>`
   justify-content: flex-start;
   position: fixed;
   top: 0;
-  left: 0%;
   left: ${(props) => (props.active ? 0 : '-100%')};
   transition: ${(props) => (props.active ? '350ms' : '850ms')};
 `;

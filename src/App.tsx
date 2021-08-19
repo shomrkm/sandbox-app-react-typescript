@@ -1,11 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
-import { Navbar } from './components/Navbar';
 
-import { Home } from './pages/Home';
-import { Reports } from './pages/Reports';
-import { Products } from './pages/Products';
+import { Toolbar } from './components/Toolbar';
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -16,28 +12,37 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const StyledMenuPage = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  height: 100vh;
+`;
+
+const Navigation = styled.div`
+  width: 80px;
+  text-align: center;
+`;
+
+const MainContent = styled.div`
+  flex: 1;
+  text-align: center;
+`;
+
+const SubContent = styled.div<{ width: string }>`
+  width: ${(props) => props.width};
+  background-color: lightpink;
 `;
 
 export const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Router>
-        <Navbar />
-        <Switch>
-          <StyledMenuPage>
-            <Route path="/" exact component={Home} />
-            <Route path="/reports" component={Reports} />
-            <Route path="/products" component={Products} />
-          </StyledMenuPage>
-        </Switch>
-      </Router>
+      <Wrapper>
+        <Navigation>
+          <Toolbar />
+        </Navigation>
+        <SubContent width={'0px'}></SubContent>
+        <MainContent>Main</MainContent>
+      </Wrapper>
     </>
   );
 };
