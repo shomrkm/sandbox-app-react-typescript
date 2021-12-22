@@ -22,23 +22,8 @@ export const SidebarData: Sidebar = [
     icon: <IoIcons.IoIosPaper />,
   },
   {
-    title: 'Products',
-    path: '/products',
+    title: 'useEffect Example',
+    path: '/useeffect-example',
     icon: <FaIcons.FaCartPlus />,
-  },
-  {
-    title: 'Team',
-    path: '/team',
-    icon: <IoIcons.IoMdPeople />,
-  },
-  {
-    title: 'Messages',
-    path: '/messages',
-    icon: <FaIcons.FaEnvelopeOpenText />,
-  },
-  {
-    title: 'Support',
-    path: '/support',
-    icon: <AiIcons.AiFillHome />,
   },
 ];

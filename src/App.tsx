@@ -1,7 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import { Toolbar } from './components/Toolbar';
+import { Navbar } from './components/Navbar';
+import { Home } from './pages/Home';
+import { UseEffectExample } from './pages/UseEffectExample'
+import { Reports } from './pages/Reports'
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -12,37 +16,29 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Wrapper = styled.div`
+const StyledMenuPage = styled.div`
   display: flex;
-  height: 100vh;
-`;
-
-const Navigation = styled.div`
-  width: 80px;
-  text-align: center;
-`;
-
-const MainContent = styled.div`
-  flex: 1;
-  text-align: center;
-`;
-
-const SubContent = styled.div<{ width: string }>`
-  width: ${(props) => props.width};
-  background-color: lightpink;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
 `;
 
 export const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Wrapper>
-        <Navigation>
-          <Toolbar />
-        </Navigation>
-        <SubContent width={'0px'}></SubContent>
-        <MainContent>Main</MainContent>
-      </Wrapper>
+      <Router>
+        <Navbar />
+        <Switch>
+          <StyledMenuPage>
+            {/* <Route path="/" exact component={Home} /> */}
+            <Route path="/" exact component={UseEffectExample} />
+            <Route path="/reports" component={Reports} />
+            <Route path="/useeffect-example" component={UseEffectExample} />
+          </StyledMenuPage>
+        </Switch>
+      </Router>
     </>
   );
 };

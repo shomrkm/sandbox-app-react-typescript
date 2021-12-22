@@ -40,14 +40,14 @@ const StyledNavText = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 8px 0px 8px 16px;
+  padding: 4px 0px 4px 16px;
   list-style: none;
-  height: 60px;
+  height: 40px;
 
   a {
     text-decoration: none;
     color: #f5f5f5;
-    font-size: 18px;
+    font-size: 16px;
     width: 95%;
     height: 100%;
     display: flex;
@@ -78,9 +78,7 @@ const StyledNavbarToggle = styled.div`
   align-items: center;
 `;
 
-interface Props {}
-
-export const Navbar: React.VFC<Props> = () => {
+export const Navbar: React.VFC = () => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
