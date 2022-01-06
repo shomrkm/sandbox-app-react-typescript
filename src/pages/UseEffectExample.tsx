@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useReducer } from 'react';
 
 interface Props {}
 
-export const UseEffectExample: React.VFC<Props> = () => {
+export const useEffectExample: React.VFC<Props> = () => {
   const [step, setStep] = useState(1);
 
   return (
@@ -14,12 +14,11 @@ export const UseEffectExample: React.VFC<Props> = () => {
   );
 };
 
+const Counter = ({ step }: { step: number }) => {
+  const [count, dispatch] = useReducer(reducer, 0);
 
-const Counter = ({ step } : { step: number }) => {
-  const [count, dispatch] = useReducer(reducer, 0)
-  
   function reducer(state: any, action: any) {
-    switch(action.type){
+    switch (action.type) {
       case 'tick':
         return state + step;
       default:
@@ -33,11 +32,11 @@ const Counter = ({ step } : { step: number }) => {
       dispatch({ type: 'tick' });
     }, 1000);
     return () => clearInterval(id);
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <>
       <p>{count}</p>
     </>
-  )
-}
+  );
+};

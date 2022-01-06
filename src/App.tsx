@@ -4,8 +4,8 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
-import { UseEffectExample } from './pages/UseEffectExample'
-import { Reports } from './pages/Reports'
+import { useEffectExample } from './pages/UseEffectExample';
+import { useFetchExample } from './pages/useFetchExample';
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -13,12 +13,13 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
+    height: 100vh;
   }
 `;
 
 const StyledMenuPage = styled.div`
   display: flex;
-  height: 90vh;
+  // height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
@@ -33,9 +34,9 @@ export const App = () => {
         <Switch>
           <StyledMenuPage>
             {/* <Route path="/" exact component={Home} /> */}
-            <Route path="/" exact component={UseEffectExample} />
-            <Route path="/reports" component={Reports} />
-            <Route path="/useeffect-example" component={UseEffectExample} />
+            <Route path="/" exact component={useFetchExample} />
+            <Route path="/usefetch-example" component={useFetchExample} />
+            <Route path="/useeffect-example" component={useEffectExample} />
           </StyledMenuPage>
         </Switch>
       </Router>

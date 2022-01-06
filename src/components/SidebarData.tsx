@@ -17,8 +17,8 @@ export const SidebarData: Sidebar = [
     icon: <AiIcons.AiFillHome />,
   },
   {
-    title: 'Reports',
-    path: '/reports',
+    title: 'useFetch Example',
+    path: '/usefetch-example',
     icon: <IoIcons.IoIosPaper />,
   },
   {
